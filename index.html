@@ -8,56 +8,65 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header>
-    <nav class="navbar">
-      <div class="logo">OMSK LV</div>
-      <ul class="nav-links">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="cerkof.html">Церковь</a></li>
-          <li><a href="shar.html">Шар</a></li>
-          <li><a href="pamatnik.html">Памятник слесарю</a></li>
-      </ul>
-      <div class="nav-buttons">
-        <button class="primary-btn">Экскурсия</button>
-        <button class="secondary-btn">Контакты</button>
-      </div>
-    </nav>
-  </header>
+<header>
+  <nav class="navbar">
+    <div class="logo">OMSK LV</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="cerkof.html">Церковь</a></li>
+      <li><a href="shar.html">Шар</a></li>
+      <li><a href="pamatnik.html">Памятник слесарю</a></li>
+    </ul>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <button class="mode-toggle" id="modeToggle">Режим: День</button>
+      <button class="primary-btn">Экскурсия</button>
+      <button class="secondary-btn">Контакты</button>
+    </div>
+  </nav>
+</header>
 
 <section class="hero fade-in">
   <h1>Путешествуйте по Омску — город с богатой историей и красотой</h1>
-  
   <p>Откройте для себя главные достопримечательности, памятники, церкви и уникальные места Омска. Погрузитесь в атмосферу города вместе с нами!</p>
-  <button class="btn btn-primary" >Подробнее</button>
+  <button class="btn btn-primary">Подробнее</button>
 </section>
-
 
 <section class="section fade-in">
   <h2>Что вас ждет в Омске</h2>
   <div class="cards-container">
-<div class="card">
-   <h3>Исторические памятники</h3>
-   <p>Погрузитесь в богатую историю Омска, посетив главные памятники и старинные здания, рассказывающие о прошлом города.</p>
-</div>
+    <div class="card">
+      <h3>Исторические памятники</h3>
+      <p>Погрузитесь в богатую историю Омска, посетив главные памятники и старинные здания, рассказывающие о прошлом города.</p>
+    </div>
     <div class="card">
       <h3>Культурные места</h3>
- <p>Музеи, театры, церкви — все, что делает Омск уникальным и насыщенным культурной жизнью.</p>
+      <p>Музеи, театры, церкви — все, что делает Омск уникальным и насыщенным культурной жизнью.</p>
     </div>
-<div class="card">
+    <div class="card">
       <h3>Природа и парки</h3>
-  <p>Отличные места для прогулок, отдыха и фотографий — парки и природные уголки Омска ждут вас.</p>
+      <p>Отличные места для прогулок, отдыха и фотографий — парки и природные уголки Омска ждут вас.</p>
     </div>
-</div>
+  </div>
 </section>
-
 
 <section class="section fade-in" style="text-align:center;">
-<h2>Инфу думал не я </h2>
-<p>Я ее взял с этого крутого сайта про омск</p>
-<button class="btn btn-primary" style="margin-top:20px;" > <a href="https://www.tripadvisor.ru/Attractions-g298530-Activities-Omsk_Omsk_Oblast_Siberian_District.html">Открыть сайт</a> </button>
+  <h2>Инфу думал не я</h2>
+  <p>Я ее взял с этого крутого сайта про омск</p>
+  <button class="btn btn-primary" style="margin-top:20px;">
+    <a href="https://www.tripadvisor.ru/Attractions-g298530-Activities-Omsk_Omsk_Oblast_Siberian_District.html" target="_blank">Открыть сайт</a>
+  </button>
 </section>
 
-
+<script>
+  const modeBtn = document.getElementById('modeToggle');
+  modeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('night');
+    if (document.body.classList.contains('night')) {
+      modeBtn.textContent = 'Режим: Ночь';
+    } else {
+      modeBtn.textContent = 'Режим: День';
+    }
+  });
+</script>
 </body>
 </html>

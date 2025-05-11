@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Места Омска</title>
+<!-- Подключение шрифтов -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" />
+<link rel="stylesheet" href="cerkof.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">OMSK LV</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="cerkof.html">Церковь</a></li>
+      <li><a href="shar.html">Шар</a></li>
+      <li><a href="pamatnik.html">Памятник слесарю</a></li>
+    </ul>
+    <div class="nav-buttons">
+      <button class="primary-btn">Экскурсия</button>
+      <button class="secondary-btn">Контакты</button>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="card">
+    <img src="image/pojarnyk.jpg" alt="Собор" class="card-img" />
+    <div class="card-content">
+      <div>
+        <h2 class="card-title">Памятник «Степаныч»</h2>
+        <div class="description" id="desc">
+            Памятник «Степаныч» был установлен в Омске в 1998 году в честь празднования Дня города Омска. Говорят, что его прототипом является подобный заграничный памятник «Чумил», установленный в Братиславе годом ранее. Бывший мэр Омска В.П. Рощупкин во время своего путешествия в Словакии увидел новый необычный памятник, и тот ему настолько понравился, что заботливый градоначальник решил подарить своему городу такой же. Авторы памятника И. Вахитов и С. Норышев изготовили Степаныча по описанию Рощупкина.
+            В наши дни подобные памятники можно найти во многих русских городах, таких как Москва, Екатеринбург, Тюмень и других.
+             
+            Он олицетворяет собой символ уважения к данной профессии со стороны жителей и властей города. В железе увековечен сантехник, который вылез из канализационного люка в защитной каске, положил рядом с собой разводной ключ и смотрит на проезжую часть, положив голову на скрещенные руки.
+             
+            Увековеченный слесарь-сантехник, наряду с другими, стал символом Омска. Среди местных жителей и гостей города считается хорошей приметой, прогуливаясь по улице рядом со скульптурой, оставить монету на счастье.
+        </div>
+        <button class="read-more" id="readMoreBtn">Читать дальше</button>
+      </div>
+      <div class="button-group">
+        <button class="btn btn-ticket">Купить билет</button>
+        <button class="btn btn-info" id="moreInfoBtn">Узнать больше</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  const desc = document.getElementById('desc');
+  const btn = document.getElementById('readMoreBtn');
+
+  btn.addEventListener('click', () => {
+    desc.classList.toggle('expanded');
+    if (desc.classList.contains('expanded')) {
+      btn.textContent = 'Свернуть';
+    } else {
+      btn.textContent = 'Читать дальше';
+    }
+  });
+
+
+  document.getElementById('moreInfoBtn').addEventListener('click', () => {
+    alert('Больше информации скоро будет!');
+  });
+</script>
+
+</body>
+</html>

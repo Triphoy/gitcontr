@@ -1,101 +1,236 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 * {
-
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-
-    font-family: "Montserrat", sans-serif;
-
+  font-family: "Montserrat", sans-serif;
+  background: #f0f2f5;
+  color: #222;
+  line-height: 1.6;
 }
+
 
 a {
-
-    text-decoration: none;
+  text-decoration: none;
+  color: inherit;
 }
-
 
 header {
-
-    display: flex;
-    background: #e7e7e7;
-    box-shadow: #000;
-    padding: 40px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0px auto;
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
 }
 
-ul {
-
-    display: flex;
-    list-style: none;
-    gap: 30px;
-    
-}
-
-
-header a {
-
-    color: #000;
-}
-
-header button {
-
- margin-left: 50px;
-}
 .logo {
-
-    font-weight: 800;
-    margin-right: 50px;
+  font-weight: 800;
+  font-size: 24px;
+  color: #2c3e50;
 }
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #0077ff;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.primary-btn,
+.secondary-btn,
+.ticket,
+.learn-more {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.primary-btn {
+  background-color: #0077ff;
+  color: #fff;
+}
+
+.primary-btn:hover {
+  background-color: #005dd1;
+}
+
+.secondary-btn {
+  background-color: #e7e7e7;
+}
+
+.secondary-btn:hover {
+  background-color: #ccc;
+}
+
 
 .container {
-    display: flex;
-    max-width: 1400px;
-    margin: 0px auto;
-    
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
 }
 
-.hero-container {
 
-    display: flex;   
-    margin: 50px auto;   
-    
+.card {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.info {
-
-    display: flex;
-    gap: 30px;
-    
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
-.sobor {
-   display: flex;
-    width: 50%;
-    height: 500px;
-    border-radius: 20px;
-    margin: 0px auto;
-    align-items: center;
-    justify-content: center;
+
+.card-img {
+  flex: 1 1 40%;
+  min-width: 300px;
+  height: auto;
+  object-fit: cover;
 }
 
-.text-container {
 
-    max-width: 700px;
+.card-content {
+  flex: 1 1 60%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.title {
+.card-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
 
-    font-size: 25px;
-    margin-bottom: 20px;
+
+.description {
+  position: relative;
+  max-height: 150px;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: max-height 0.5s ease;
+  cursor: pointer;
+}
+
+
+.description::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to bottom, transparent, #f0f2f5);
+  display: block;
+  transition: opacity 0.3s;
+}
+
+
+.description.expanded {
+  max-height: none;
+}
+
+.description.expanded::after {
+  opacity: 0;
+}
+
+
+.read-more {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: #0077ff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s;
+}
+
+.read-more:hover {
+  color: #005dd1;
+}
+
+
+.button-group {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-ticket {
+  background-color: #28a745;
+  color: #fff;
+}
+.btn-ticket:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.btn-info {
+  background-color: #ffc107;
+  color: #222;
+}
+.btn-info:hover {
+  background-color: #e0a800;
+  transform: translateY(-2px);
+}
+
+/* Адаптив */
+@media(max-width: 768px) {
+  .card {
+    flex-direction: column;
+  }
+  .card-img {
+    width: 100%;
+    height: auto;
+  }
+  .card-content {
+    padding: 20px;
+  }
 }
